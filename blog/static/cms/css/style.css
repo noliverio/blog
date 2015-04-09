@@ -1,0 +1,33 @@
+body{
+    background-image: url("http://www.nicholasoliverio.com/images/crossword.png");
+}
+header{
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+}
+div.portfolio_contents{
+    background: white;
+    margin-left:auto;
+    margin-right:auto;
+    width: 70%;
+    border-radius: 5px;
+    padding: 25px 20px 10px 20px;
+}
+div.portfolio_contents >ul{
+    list-style-type: none;
+}
+div.portfolio_project{
+    margin: 25px 20px 10px 20px;
+}
+footer{
+    position: relative;
+    bottom: 0;
+    background-color: white;
+    margin-bottom: -1em;
+}
+footer > p{
+    font-size: 10pt;
+    color: black;
+    text-align: center;
+}
