@@ -1,5 +1,15 @@
 {% extends 'base.html' %}
-{% block title %}{% endblock %}
+{% block title %}New Post{% endblock %}
 {% block body %}
-
+<form id = 'new_post' method = 'POST' action = '/blog/new_page/'>
+    {% csrf_token %}
+    {% for field in form %}
+        {{ field.errors }}
+        {{ field.help_text }}<br />
+        {{ field }}
+        <br />
+        <br />
+    {% endfor %}
+    <input type = 'submit' name = 'submit' value = 'Create Post'>
+</form>
 {% endblock %}

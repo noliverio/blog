@@ -4,7 +4,8 @@
 <h1>{{ title }}</h1>
 <div class = "container">
   {% if content %}
-  <p>{{ content }}</p>
+  <p>{{ date }}</p>
+  <p>{{ content| safe }}</p>
   {% else %}
   <h1>Sorry no post by that name exists</h1>
   {% endif %}

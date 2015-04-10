@@ -11,4 +11,12 @@ of algorithms and their efficiencies. I also want to get a better understanding 
 internet works beneath the hood. I have kept a notebook of what I've learned and things that
 at the time were cool new insights, a publicly readable blog just seems like the natural progression.
 </p>
+{% if posts %}
+{% for post in posts %}
+<div class = 'post_snipit'>
+  <h3><a href = '{% url  'view_post' post.title_slug %}'>{{ post.title }}</a></h3>
+  <p>{{ post.post_text | safe }}</p>
+</div>
+{% endfor %}
+{% endif %}
 {% endblock %}
