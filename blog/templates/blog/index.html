@@ -15,8 +15,9 @@ at the time were cool new insights, a publicly readable blog just seems like the
 {% for post in posts %}
 <div class = 'post_snipit'>
   <h3><a href = '{% url  'view_post' post.title_slug %}'>{{ post.title }}</a></h3>
-  <p>{{ post.post_text | safe }}</p>
+  <p>{{ post.post_summary | safe }}</p>
 </div>
 {% endfor %}
 {% endif %}
+<p><a href = '{% url 'archive' %}'>Read Older Posts</a></p>
 {% endblock %}
