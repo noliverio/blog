@@ -31,3 +31,9 @@ def view_post(request, blog_post_slug):
         # Display a default template
         context_dict['title'] = blog_post_slug
     return render(request, 'blog/blog_page.html', context_dict)
+
+def archive(request):
+    post_list = Blog_post.objects.order_by('-date')
+    print post_list
+    return render(request, 'blog/archive.html', {'posts': post_list})
+    

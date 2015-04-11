@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}Archive{% endblock %}
+{% block body %}
+{% if posts %}
+    <h1>Older Posts</h1>
+    {% for post in posts %}
+        <p>{{ post.date }}</p>
+        <p><a href = '{% url 'view_post' post.title_slug %}'>{{ post.title }}</a></p>
+    {% endfor %}
+{% else %}
+    <h1>There are no Posts yet</h1>
+{% endif %}
+{% endblock %}
