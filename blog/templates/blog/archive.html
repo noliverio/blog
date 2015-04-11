@@ -4,7 +4,7 @@
 {% if posts %}
     <h1>Older Posts</h1>
     {% for post in posts %}
-        <p>{{ post.date }}</p>
+        <p>{{ post.date.date }}</p>
         <p><a href = '{% url 'view_post' post.title_slug %}'>{{ post.title }}</a></p>
     {% endfor %}
 {% else %}
