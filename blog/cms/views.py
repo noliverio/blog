@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
+from django.contrib.auth.decorators import login_required
 from models import Blog_post
 from forms import Blog_postForm
 
@@ -7,6 +8,7 @@ def homepage(request):
     post_list = Blog_post.objects.order_by('-date')[:10]
     return render(request, 'blog/index.html', {'posts': post_list})
 
+@login_required
 def new_post(request):
     if request.method == 'POST':
         form = Blog_postForm(data=request.POST)
