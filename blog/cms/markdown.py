@@ -6,7 +6,8 @@
 #     { unordered list item }
 #     =
 #     >     indent
-#     \ escape key 
+#     \ escape key
+#     * code * 
 
 def parse(text):
     lookup = {'#':'<h1>',
@@ -23,6 +24,7 @@ def parse(text):
               }
     if confirm_format(text):
         position = 0
+        code = False
         running_list = False
         while position < len(text):
             char = text[position]
@@ -38,6 +40,15 @@ def parse(text):
             elif char == '\\':
                 text = text[:position]+ text[position+1:]
                 position +=1 
+            elif char == '*':
+                if code:
+                    code = False
+                    text = text[:position]+'</p></div>'+text[position+1:]
+                    position += 10
+                else:
+                    code = True
+                    text = text[:position]+'<div class = "code"><p>'+text[position+1:]
+                    position += 23
             elif char in lookup:
                 text = text[:position]+lookup[char]+text[position+1:]
                 position += len(lookup[char])
