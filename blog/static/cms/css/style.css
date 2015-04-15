@@ -29,6 +29,7 @@ div.code >p{
     font-size: 11;
     font-family: Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New;
     color: white;
+    word-wrap: break-word;
 }
 footer{
     position: relative;
@@ -40,4 +41,19 @@ footer > p{
     font-size: 10pt;
     color: black;
     text-align: center;
+}
+@media screen and (max-width: 600px) {
+    div.mobile_warning {
+       display: block;
+       background-color: #B33A3A;
+       color: yellow;
+       border: solid;
+       border-color: orange;
+       border-radius: 5px;
+    }
+}
+@media screen and (min-width: 601px) {
+    div.mobile_warning{
+        display:none;
+    }
 }
