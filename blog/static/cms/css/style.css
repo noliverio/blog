@@ -1,5 +1,6 @@
 body{
     background-image: url("http://www.nicholasoliverio.com/images/crossword.png");
+    line-height: 1.75;
 }
 header{
     margin-left: auto;
