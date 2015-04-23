@@ -28,7 +28,7 @@ div.code{
 }
 div.code >p{
     font-size: 11;
-    font-family: Consolas,Monaco, Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New;
+    font-family: Consolas, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New;
     color: white;
     word-wrap: break-word;
 }
